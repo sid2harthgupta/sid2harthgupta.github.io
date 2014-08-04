@@ -116,11 +116,43 @@
 
 /* Slide feature */
 
+
+.slide-feature-collegefeed h1 {
+  color: #363636;  
+  
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  
+  font-size: 40px;
+  margin-top: 105px;
+  margin-bottom: 0px;
+}
+
+.slide-feature-collegefeed h2 {
+  color: #b7b7b7;
+  
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  
+  font-size: 40px;
+  margin: 5px;
+}
+
+
+
 .slide-feature-montreal {
   text-align: center;
   background-image: url('/montreal2.jpg');
   height: 470px;
 }
+
+.slide-feature-collegefeed {
+  text-align: center;
+  background-image: url('/collegefeed1.jpg');
+  height: 470px;
+}
+
+
 
 .slide-feature-brisbane {
   text-align: center;
@@ -172,6 +204,33 @@
 }
 
 .slide-feature-brisbane p {
+  display: block;
+  color: #000000;
+  
+  font-family: "HelveticaNeueMdCn", Helvetica, sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  
+  font-size: 35px;
+}
+
+.slide-feature-collegefeed img {
+  margin-top: 112px;
+  margin-bottom: 28px;
+}
+
+.slide-feature-collegefeed a {
+  display: block;
+  color: #6fc5fe;
+  
+  font-family: "HelveticaNeueMdCn", Helvetica, sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  
+  font-size: 35px;
+}
+
+.slide-feature-collegefeed p {
   display: block;
   color: #000000;
   
