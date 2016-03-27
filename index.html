@@ -1,254 +1,430 @@
-<!doctype html>
-<html>
-    <head>
-        <link href='css.css' rel='stylesheet'>
-        <link href="/bootstrap.min.css" rel="stylesheet">
-        <link href="sidsCorner.css" rel="stylesheet">
-        <title>
-            Siddharth Gupta
-        </title>
-    </head>
-    <body>
-        <div class="header">
-            <div class="container">
-                <font size=5>
-                    Sid's Corner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </font>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Siddharth Gupta</title>
+  </head>
 
-                <ul class="menu">
-                    <li><a href="#about_me">About me</a></li>
-                    <li><a href="/Siddharth_Resume.pdf">Resume</a></li>
-<!--                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">More <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="http://115.115.108.125/cgi-bin/itsResearchPortal.py">ITS Lab IIT-M Portal</a></li>
-                                <li><a href="#">Coming Soon</a></li>
-                            </ul>
-                    </li>-->
-                </ul>
+
+  <body >
+    <!-- Header Bar -->
+    <header>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+              Sid's <span class="subhead">Corner</span>
+            </a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div><!-- container -->
+      </nav>
+    </header>
+
+    <!-- Introduction, Table, Columns, Quotations-->
+
+    <div class="container">
+      <!-- Introduction-->
+      <div class="row" id="vision">
+        <section class="page col-sm-12">
+          <h2>Data Driven Cities</h2>      
+
+          <p>In 1950, 750 million people lived in cities. In the middle of 2009, for the first time, more people (3.42B) lived inside cities than outside. In 2014, this fraction increased to 54% of the 7.3B (3.94B). This is anticipated to increase to 66% of 9.7B (6.4B) by 2050. This explosion in population has stretched cities to the edge of their capacity and lead to unprecedented stress on urban resources. Under such conditions, it is critical that resources available to cities be utilized optimally and towards the best set of &nbsp;undertakings.</p>
+
+          <p>Increasing population gives rise to two phenomena- higher density and sprawl. High density leads to crowding and levies excess demand on existing infrastructure. Sprawl leads to poorly planned neighborhoods which in turn cause reliance on automobiles and cause long commutes. For several years, the solution to these problems was assumed to lie in expanding infrastructure facilities. But in this scenario, building broader roads is analogous to buying a larger belt to cure obesity. Stress is bound to reappear the moment the additional wiggle room gets &nbsp;exhausted.</p>
+
+          <p>The urban form today is covered with a variety of sensor. Hand held devices, traffic cameras, inductive loops, fare collection systems and several other sensors are continuously recording some form of urban mobility or the other. Cities require a software update for transportation services that enable people to utilize resources better. This should not be a penalty based system such as that followed by surge pricing in Uber or freeway tolls but rather an information based planning tool that enables people to plan entire journeys based on system optimality, possibly driven by incentives for behavior changes. The way to do this has to be a data driven system, at the heart of which lie robust models for urban mobility which are not just able to explain past behaviors but also predict likely future &nbsp;movements.</p>
+
+          <p>There are 3 key ubiquitous systems for collecting data pertaining to people’s movement in cities. And these occupy nearly disjoint universes. The first is through on-board GPS units. Data from these units are often available on taxi cabs and sometimes even on private vehicles through mobile apps such as that used for the famous Mobile Millennium project. These provide quality information about existing traffic flows and can do so with a relatively small penetration rate in the traffic stream. The second mode involves smart cards. These provide information about fare transactions on transit services, usually both rails and buses. These are often characterized by high penetration rates and provide a nearly complete universe of the movements occurring in the transit system. The ODX (Origin-Destination-Transfer) model developed at MIT’s Transit lab leverages these data to estimate nearly all transactions on the transit network of London. These two modes are able to provide fairly detailed insights into the real time performance of road networks and the public transit system, people’s behavior outside these systems still remains untapped. Call records from cell phones are able to fill in this gap. For several years, these records were being discarded as waste by telecom service providers. Recent studies, however, have been able to leverage these data to produce synthetic trajectories that can estimate each individual’s location within 10-minute time slots in a day. Some of the pioneering work in this type of modeling has been done at the Human Mobility and Networks Lab at &nbsp;MIT.</p>
+
+          <p>These 3 sources can in tandem identify the most and least favorable itinerary of a traveler’s daily mobility motif for the system. They can also be used to obtain behavioral insights and determine price and cross elasticities to effectuate the required changes in people’s &nbsp;behaviors.</p>
+
+          <p>Such a data-driven incentive-based model is what I think will lead to the rise of Transportation as a service (TAAS). It has immense potential to improve the management of urban resources and sustain the ever increasing demands being imposed on the &nbsp;infrastructure.</p>
+        </section>
+      </div>
+
+      <!-- Columns-->
+      <div class="row">
+        <section id="projects" class="page col-sm-12">
+          <h2>Research Projects</h2>
+          <div class="row">
+            <section class="col-sm-4">
+              <h3>Boston Cell Phone data</h3>
+              <p>Dr. Winthrop is the guardian of Missy, a three-year old Llaso mix, who he adopted at the shelter. Dr. Winthrop is passionate about spay and neuter and pet adoption, and works tireless hours outside the clinic, performing free spay and neuter surgeries for the shelter.</p>
+            </section>
+            <section class="col-sm-4">
+              <h3>Smartcards in Brisbane</h3>
+              <p>Dr. Chase spends much of her free time helping the local rescue organization find homes for animals, such as Kibbles - a Maine Coon Cat who is part of the large Chase household, including two dogs, three cats, and a turtle.</p>
+            </section>
+            <section class="col-sm-4">
+              <h3>GPS Probes and Video Cameras in Chennai</h3>
+              <p>Leroy walked into Dr. Sanders front door when he was moving into a new house. After searching for weeks for Leroy's guardians, he decided to make Leroy a part of his pet family, and now has three cats.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+
+
+      <div class="row">
+        <section class="col-sm-12">
+
+          <div class="carousel slide hidden-xs" id="featured" data-ride="carousel">
+
+            <ol class="carousel-indicators">
+              <li data-target="#featured" data-slide-to="0" class="active"></li>
+              <li data-target="#featured" data-slide-to="1"></li>
+              <li data-target="#featured" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="./images/Git1.png" alt="Lifestyle Photo">
+                  <!--<div class="carousel-caption">
+                    Captioning an image in a carousel
+                </div>-->
+              </div>
+              <div class="item">
+                <img src="./images/Git2.png" alt="Mission">
+              </div>
+              <div class="item">
+                <img src="./images/Git3.png" alt="Vaccinations">
+              </div>
             </div>
+
+            <a class="left carousel-control" href="#featured" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+
+            <a class="right carousel-control" href="#featured" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+
+          </div>
+        </section>
+      </div><!-- row -->
+
+
+      <div class="row">
+        <section class="col-sm-12">
+          <h2>Hackathons and student projects</h2>      
+        </section>
+      </div>
+
+      <div class="row"><!--Table elements- no rows or columns specified-->
+        <div class="col-xs-6 col-sm-4">
+          <img class="img-responsive" src="images/APS.jpg" alt="Exotic Pets Photo">
+          <h3>Exotic Pets</h3>
+          <p>We offer specialized care for reptiles, rodents, birds, and other exotic pets.</p>
         </div>
-        <div class="header">
-            <div class="container">
-                <div class="row">
-                    <div class="slide-copy col-xs-8">
-                        <p style="color:black;">I am a graduate student at Massachusetts Institute of Technology. I am pursuing my second masters degree and have a background in building Intelligent Transporation Systems, project planning and management from IIT-Madras. I am currently working at the Human Mobility and Networks lab on a quest to transform cities into intelligent and more efficient spaces.</br> Here is an attempt at connecting the dots from my days as an undergrad till today.
-                        </p>
-                    </div>
-                    <div class="slide-img col-xs-4">
-                        </br>
-                        <img src="/profile_pic.png" height="270px">
-                    </div>
+
+        <!-- Video -->
+        <div class="col-xs-6 col-sm-4">
+          <div class="embed-responsive embed-responsive-4by3"> 
+          <img class="img-responsive" src="images/collage_1.png" alt="Exotic Pets Photo">
+          </div>
+          <h3>Grooming</h3>
+          <p>Our therapeutic grooming treatments help battle fleas, allergic dermatitis, and other challenging skin conditions.</p>
+        </div>
+
+        <div class="col-xs-6 col-sm-4">
+          <img class="img-responsive" src="images/collage_2.png" alt="General Health P
+          hoto">
+          <h3>General Health</h3>
+          <p>Wellness and senior exams, ultrasound, x-ray, and dental cleanings are just a few of our general health services.</p>
+        </div>
+
+      </div><!-- Table elements -->
+
+
+
+
+
+
+      <!-- Table-->
+      <div class="row" id="skills">
+        <section class="page col-sm-12">
+          <h2>Hackathons and student projects</h2>
+          <div class="row">
+            <section class="col-sm-6">
+              <h3>Exotic Pets</h3>
+              <p>We offer specialized care for reptiles, rodents, birds, and other exotic pets.</p>
+            </section>        
+            <section class="col-sm-6">
+              <h3>Grooming</h3>
+              <p>Our therapeutic grooming treatments help battle fleas, allergic dermatitis, and other challenging skin conditions.</p>
+            </section>        
+          </div>
+          <div class="row">
+            <section class="col-sm-6">
+              <h3>General Health</h3>
+              <p>Wellness and senior exams, ultrasound, x-ray, and dental cleanings are just a few of our general health services.</p>
+            </section>        
+            <section class="col-sm-6">
+              <h3>Nutrition</h3>
+              <p>Let our nutrition experts review your pet's diet and prescribe a custom nutrition plan for optimum health and disease prevention.</p>
+            </section>        
+          </div>
+          <div class="row">
+            <section class="col-sm-6">
+              <h3>Pest Control</h3>
+              <p>We offer the latest advances in safe and effective prevention and treatment of fleas, ticks, worms, heart worm, and other parasites.</p>
+            </section>        
+            <section class="col-sm-6">
+              <h3>Vaccinations</h3>
+              <p>Our veterinarians are experienced in modern vaccination protocols that prevent many of the deadliest diseases in pets.</p>
+            </section>        
+          </div>
+        </section>
+      </div>
+
+
+      <!-- Quotations-->
+      <div class="row">
+        <section id="about" class="page col-sm-12">
+          <h2>About Me</h2>
+          <div class="row">
+            <section class="col-sm-6">
+              <blockquote>
+                <p>
+                  During the summer, our rabbit, Tonto, began to have severe redness and itching on his belly and feet. Through diagnostic testing, we learned that Tonto is severely allergic to over a dozens kinds of grass pollens. We've now been doing allergy injections for several months, and his itching and redness have nearly gone away.
+                </p>
+                <footer>
+                  Jane H.
+                </footer>
+              </blockquote>
+            </section>
+            <section class="col-sm-6">
+              <blockquote>
+                <p>
+                  When Samantha, our Siamese cat, began sleeping all the time and urinating excessively, we brought her to see the specialists at Wisdom. After running a blood test, Dr. Winthrop confirmed what we all feared - Samantha was showing signs of diabetes. The doctor put us on a daily routine to provide Samantha insulin injections, and showed us how to administer the shots.
+                </p>
+                <footer>
+                  The McPhersons
+                </footer>
+              </blockquote>
+            </section>
+          </div>
+
+          <div class="row">
+            <section class="col-sm-6">
+              <blockquote>
+                <p>
+                  The staff at Wisdom worked tirelessly to determine why our three-year old Golden Retriever, Roxie, started going into sudden kidney failure. They stabilized her and provided fluids until her kidneys were again functioning normally. We learned just how toxic grapes and raisins are to pets, and Roxie is no longer allowed to roam unattended in the orchard.
+                </p>
+                <footer>
+                  John B
+                </footer>
+              </blockquote>
+            </section>
+            <section class="col-sm-6">
+              <blockquote>
+                <p>
+                  Wisdom Pet Medicine is the only clinic around that will even book pet fish for appointments. When our 13-year old Comet goldfish, McAllister, turned from silvery white to an angry red, we called around, urgently trying to find a veterinarian who could help. Wisdom not only got us in the same day, but also was able to diagnose McAllister as having a severe case of septicemia.
+                </p>
+                <footer>
+                  Lorraine S
+                </footer>
+              </blockquote>
+            </section>
+          </div>
+          <!-- 2nd Row end-->
+
+        </section>
+        <!-- Section for Quotations end-->
+      </div>
+      <!-- Quotation ends--> 
+    </div><!-- content container -->
+
+    <!-- Adding Carousel-->
+
+    <div class="content container"> <!-- Since carousel is inside container
+                                          it will resize according to container -->
+      <div class="row">
+        <section class="col-sm-12">
+
+          <div class="carousel slide hidden-xs" id="featured"> <!--data-ride="carousel" -->
+
+            <ol class="carousel-indicators">
+              <li data-target="#featured" data-slide-to="0" class="active"></li>
+              <li data-target="#featured" data-slide-to="1"></li>
+              <li data-target="#featured" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="images/carousel-lifestyle.jpg" alt="Lifestyle Photo">
+                  <div class="carousel-caption">
+                    Captioning an image in a carousel
                 </div>
+
+              </div>
+              <div class="item">
+                <img src="images/carousel-mission.jpg" alt="Mission">
+              </div>
+              <div class="item">
+                <img src="images/carousel-vaccinations.jpg" alt="Vaccinations">
+              </div>
             </div>
-        </div>
-        
-        <div class="header">
-            <div class="container">
-                <div class="row">
-                    <div class="slide-img col-xs-4">
-                        <img src="/collage_1.png" height="260px">
-                    </div>
-                    <div class="slide-img col-xs-3">
-                        <img src="/collage_2.png" height="260px">
-                    </div>
-                    <div class="slide-img col-xs-2">
-                        <img src="/collage_3.png" height="260px">
-                    </div>
-                    <div class="slide-copy col-xs-3", style="padding-left: 30px; padding-top: 15px;">
-                        Philosopy-
-                        <ul>
-                            <li>Study, code/build, repeat</li>
-                            <li>Fast better than slow</li>
-                            <li>Play hard, practice harder</li>
-                        </ul>
-                        Recent OS upgrades-
-                        <ul>
-                            <li>Now 10k in 39 mins</li>
-                            <li>Eats what he can cook</li>
-                            <li>(upcoming) 3x squash skills in 2016</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        </br></br>
-        <div class="header1">
-            <div class='container'>
-                <font size=5>
-                    A tale of (mainly) 3 cities-</br></br>
-                    1. Boston
-                </font>
-            </div>
-        </div>
-        
-        <div class="header1">
-            <div class="container">
-                <div class="row">
-                    <div class="slide-img col-xs-12">
-                        <img src="/boston.png" height="320px">
-                    </div>
-                </div>
-            </div>
+
+            <a class="left carousel-control" href="#featured" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+
+            <a class="right carousel-control" href="#featured" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+
+          </div>
+        </section>
+      </div><!-- row -->   
+    </div><!-- content container -->
+
+    <!-- Ending Carousel-->
+
+
+
+    <!-- Table with illustrations -->
+    <div class="content container">
+      <div class="row">
+        <section class="col-sm-12">
+          <h2>Services</h2>      
+        </section>
+      </div>
+
+      <div class="row"><!--Table elements- no rows or columns specified-->
+        <div class="col-xs-6 col-sm-4">
+          <img class="img-responsive" src="images/exoticpets.jpg" alt="Exotic Pets Photo">
+          <h3>Exotic Pets</h3>
+          <p>We offer specialized care for reptiles, rodents, birds, and other exotic pets.</p>
         </div>
 
-        <div class="header1">
-            <div class="container">
-                <div class="row">
-                    <div class="slide-copy col-xs-12">
-                        <p style="color:black;">Call Detail Records (CDRs) are fairly ubiquitous across the world. Historically these were discarded due to sheer volume and lack of mining techniques. I am currently working on using models derived from statistical physics to simulate trajectories of 4.5 million individuals in the Greater Boston area. Alternative data sources such as Wifi data from from Skyhook and surveys are used to bridge the knowledge gap in the CDRs. At the end of the project I hope to be able to predict building occupancy profiles and incorporate the impact of special events such as concerts and sporting events on the mobility patterns of a region.</br>
-                            A co-curricular objective I am actively pursuing at MIT is getting a full-stack grasp of data systems- from building IoT systems to data analysis and information provision. My team won the <a href="http://www.disrupting-mobility.org/">Disrupting Mobility Hackathon</a> by building an Arduino based prototype of a 'mesh network navigation system' for damage appraisal and relief in case of disasters.</br>
-                            As part of a course at Media Labs, we built a coffee delivery robot and delivered 50 cups of coffee in 2.5 hours.
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <!-- Video -->
+        <div class="col-xs-6 col-sm-4">
+          <div class="embed-responsive embed-responsive-4by3"> 
+          <video class="embed-responsive-item" src="video/brushing.mp4" autoplay controls muted></video>
+          </div>
+          <h3>Grooming</h3>
+          <p>Our therapeutic grooming treatments help battle fleas, allergic dermatitis, and other challenging skin conditions.</p>
         </div>
 
-
-        </br></br>
-        <div class="header1">
-            <div class='container'>
-                <font size=5>
-                    2. Brisbane (Australia)
-                </font>
-            </div>
+        <div class="col-xs-6 col-sm-4">
+          <img class="img-responsive" src="images/generalhealth.jpg" alt="General Health P
+          hoto">
+          <h3>General Health</h3>
+          <p>Wellness and senior exams, ultrasound, x-ray, and dental cleanings are just a few of our general health services.</p>
         </div>
 
-        <a name="carousel_brisbane"></a>
-        <div class="slider">
-        
-            <div class="slide active-slide">
-                <div class="container">
-                    <div class="row">
-                        <div class="slide-copy col-xs-5">
-                            <h1>Spatio-temporal Brisbane</h1>
-                            <p>Journeys can be considered multi-dimensional vectors in a spatial-tamporal space. These can be used to capture a multitude of phenomena occurring in cities from traveler perception to determination of inefficiencies.
-                        </div>
-                        <div class="slide-img col-xs-7">
-                            </br></br></br></br></br></br>
-                            <img src="/4-2-300-FullDay.png" height="250px">
-                                </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="slide">
-                <div class="container">
-                    <div class="row">
-                        <div class="slide-copy col-xs-5">
-                            <h1>Farecard based schedule matching and improvement</h1>
-                            <p>A task traditionally performed using AVL data transferred to AFC datasets, opening up a multitude of new opportunities for traveler and planner information</p>
-                        </div>
-                        <div class="slide-img col-xs-7">
-                            </br></br></br></br></br></br></br>
-                            <img src="/scheduleMatching.png" width="500px">
-                                </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="slide">
-                <div class="container">
-                    <div class="row">
-                        <div class="slide-copy col-xs-5">
-                            <h1>Classifying travelers based on temporal behavior</h1>
-                            <p> The temporal utilization of the transit network by travelers can be used to identify classes of people in the network and then classify teavelers based on the learning. The upper dense region on the right should comprize of worker while the lower dense region should comprize of students.
-                        </div>
-                        <div class="slide-img col-xs-7">
-                            </br></br></br>
-                            <img src="/temporalBehavior.png" height="375px">
-                                </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-xs-6 col-sm-4">
+          <img class="img-responsive" src="images/nutrition.jpg" alt="Nutrition Photo">
+          <h3>Nutrition</h3>
+          <p>Let our nutrition experts review your pet's diet and prescribe a custom nutrition plan for optimum health and disease prevention.</p>
         </div>
 
-
-        <div class="slider-nav">
-            <a href="#carousel_brisbane" class="arrow-prev"><img src="/arrow-prev.png"></a>
-            <ul class="slider-dots">
-                <li class="dot active-dot">&bull;</li>
-                <li class="dot">&bull;</li>
-                <li class="dot">&bull;</li>
-            </ul>
-            <a href="#carousel_brisbane" class="arrow-next"><img src="/arrow-next.png"></a>
+        <div class="col-xs-6 col-sm-4">
+          <img class="img-responsive" src="images/pestcontrol.jpg" alt="Pest Control Photo">
+          <h3>Pest Control</h3>
+          <p>We offer the latest advances in safe and effective prevention and treatment of fleas, ticks, worms, heart worm, and other parasites.</p>
         </div>
 
+        <div class="col-xs-6 col-sm-4">
+          <img class="img-responsive" src="images/vaccinations.jpg" alt="Vaccinations Photo">
+          <h3>Vaccinations</h3>
+          <p>Our veterinarians are experienced in modern vaccination protocols that prevent many of the deadliest diseases in pets.</p>
+        </div>
+
+      </div><!-- Table elements -->
+    </div><!-- content container -->
 
 
 
-
-
-
-
-
-        <div class="header1">
-            <div class="container">
-                <div class="row">
-                    <div class="slide-copy col-xs-12">
-                        <p style="color:black;">The transit network of Brisbane has a zone-based fare structure. Due to this, passengers need to tap-on and tap-off using their smartcards. This provides an almost complete universe of journeys performed on the transit network. I was interested in building a traveler information system using these data. Starting with an internship during which I focused on market segmentation based on individual behavior, I forged a collaboration that allowed me to analyze the data for my masters thesis. I built an information system to provide measures of service reliability and occupancy. I leveraged optimization algorithms and machine learing for schedule matching, passenger segmentation and capturing traveler perception. I also used multinomial logit models to capture travelers' sensitivity to different service characteristics.</p>
-                    </div>
-                </div>
+    <!-- Panel -->
+    <div class="content container">
+      <div class="row">
+        <section class="col-sm-12">
+          <div class="panel panel-default"> <!-- primary, success, info, warning, danger -->
+            <div class="panel-heading">
+              <h3 class="panel-title">Dr. Winthrop</h3>
             </div>
-        </div>
-
-        </br></br>
-        <div class="header1">
-            <div class='container'>
-                <font size=5>
-                    3. Chennai (India)
-                </font>
+            <div class="panel-body">
+              <p>Dr. Winthrop is the guardian of Missy, a three-year old Llaso mix, who he adopted at the shelter. Dr. Winthrop is passionate about spay and neuter and pet adoption, and works tireless hours outside the clinic, performing free spay and neuter surgeries for the shelter.</p>
             </div>
-        </div>
-        
-        <div class="header1">
-            <div class="container">
-                <div class="row">
-                    <div class="slide-img col-xs-12">
-                        <img src="/Chennai.png" height="320px">
-                            </div>
-                </div>
+
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email Address</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Cally</td>
+                    <td>Reynolds</td>
+                    <td>penatibus.et@lectusa.com</td>
+                  </tr>
+                  <tr>
+                    <td>Sydney</td>
+                    <td>Bartlett</td>
+                    <td>nibh@ultricesposuere.edu</td>
+                  </tr>
+                  <tr>
+                    <td>Hunter</td>
+                    <td>Newton</td>
+                    <td>quam.quis.diam@facilisisfacilisis.org</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-        </div>
 
-        
-        <div class="header">
-            <div class="container">
-                <div class="row">
-                    <div class="slide-copy col-xs-12">
-                        <p style="color:black;">As a freshman at IIT-Madras, I was part of a team that built an Accident Prevention System (<a href="http://timesofindia.indiatimes.com/home/At-Shaastra-2010IIT-Madrass-annual-tech-fest-an-array-of-new-technologies-will-be-shown-chief-among-them-being-an-accident-prevention-system-aimed-at-reducing-frequency-of-accidents-in-india-It-warns-drivers-during-high-risk-conditions-/articleshow/6644277.cms">ToI News</a>) consisting of 4 modules-  a speed controller, an obstruction detector, overtaking feasibility checker and pulse monitor. This pushed me towards Intelligent transportation systems (ITS) and urban data analytics. I then used an image processing software to model traffic flow and to build incident detection applications. As part of the ITS Lab, I was part of the team that developed the first real-time information system (<a href="http://rtis.iitm.ac.in">RTIS</a>) for heterogenous traffic conditions using a live stream of GPS data.</p>
-                    </div>
-                </div>
+            <div class="panel-footer">
+              &raquo;<a href="#">Make an appointment</a>
             </div>
-        </div>
+          </div>
 
-        </br></br>
-        <a name="about_me"></a>
-        <div class="header1">
-            <div class='container'>
-                <font size=5>
-                    About me
-                </font>
-            </div>
-        </div>
-
-        <div class="header">
-            <div class="container">
-                <div class="row">
-                    <div class="slide-copy col-xs-12">
-                        <p style="color:black;">Hi, my name is Siddharth (Sid for all practical purposes). I was born in a small town called Bareilly in the northern plains of India where I ended up spending the first 18 years of my existence. I self-taught to college during which period I developed an obsession with learning how to build things, particularly buildings and machines. I joined the Indian Institute of Technology at Madras as a Civil engineer and spent the first couple of years learning how to build structures from buildings to roads and bridges.</br>A class project on using live feed from traffic cameras to analyze traffic flow and insights into how unsustainable modern cities were becoming drew me towards the building smart cities and intelligent infrastructure- a theme that has become my north star ever since.</br>I am in the purest sense a fitness freak and you will find me spending hours in the gym and on the squash courts.</br> I am presently absorbing (and hopefully producing) knowledge at MIT and am looking for stiffer challenges once I graduate.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
+      </div><!-- row -->   
+    </div><!-- content container -->
+    <!-- End of panel-->
 
 
+    <!-- List group item -->
+    <div class="content container">
+      <div class="row">
+        <section class="col-sm-12">
 
-        <!-- *************************************************** -->
-        <script src="/jquery.min.js"></script>
-        <script src="sidsCorner.js"></script>
-    </body>
+          <h2>Customers</h2>
+          <div class="list-group">
+            <a href="#" class="list-group-item active">Cally Reynolds <span class="badge">14</span></a>
+            <a href="#" class="list-group-item disabled">Sydney Bartlett</a>
+            <a href="#" class="list-group-item list-group-item-info">Hunter Newton</a>
+            <a href="#" class="list-group-item list-group-item-success">Brooke Perkins</a>
+            <a href="#" class="list-group-item list-group-item-warning">Nolan Slater <span class="badge">8</span></a>
+            <a href="#" class="list-group-item list-group-item-danger">Germaine Green</a>
+            <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Medge Ratliff</h3>
+            <p class="list-group-item-text">During the summer, our rabbit, Tonto, began to have severe redness and itching on his belly and feet. Through diagnostic testing, we learned that Tonto is severely allergic to over a dozens kinds of grass pollens. We've now been doing allergy injections for several months, and his itching and redness have nearly gone away.</p>
+            </a>
+            <a href="#" class="list-group-item">Nash Vasquez</a>
+          </div>
+
+        </section>
+      </div><!-- row -->   
+    </div><!-- content container -->
+    <!-- End of list group item -->
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>
