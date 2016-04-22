@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="bayes.js"></script>
+<script src="../zScoreData.js"></script>
+<script type="text/javascript">
+	var candidates = ['SANDERS', 'CLINTON', 'TRUMP', 'CRUZ', 'KASICH', 'BUSH', 'CARSON', 'OMALLEY', 'RUBIO'];
+	var candidateZScores = {};
+	candidateZScores.SANDERS = SANDERS_Z;
+	candidateZScores.CLINTON = CLINTON_Z;
+	candidateZScores.TRUMP = TRUMP_Z;
+	candidateZScores.CRUZ = CRUZ_Z;
+	candidateZScores.KASICH = KASICH_Z;
+	candidateZScores.BUSH = BUSH_Z;
+	candidateZScores.CARSON = CARSON_Z;
+	candidateZScores.OMALLEY = OMALLEY_Z;
+	candidateZScores.RUBIO = RUBIO_Z;
+</script>
+</head>
+<body>
+	<div>
+		  Enter Text: <br>
+		  <input type="text" id="fname" style="height: 50px; width: 200px; word-wrap: break-word; word-break: break-word"><br>
+		  <input type="button" onclick="run(document.getElementById('fname'))" value="Submit">
+	</div>
+	<div id="output">
+	</div>
+</body>
+</html>

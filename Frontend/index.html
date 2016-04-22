@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/c3.css">
+
+    <script src="bayes.js"></script>
+    <script src="../zScoreData.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="js/spin.min.js" charset="utf-8"></script>
+    <script src="./js/d3.min.js" charset="utf-8"></script>
+    <script src="assets/moment.js"></script>
+    <script src="assets/wordcloud.js"></script>
+    <script src="../data_3_test.js"></script>
+
+    <title>Lingua Blanca</title>
+
+    <script type="text/javascript">
+      var candidates = ['SANDERS', 'CLINTON', 'TRUMP', 'CRUZ', 'KASICH', 'BUSH', 'CARSON', 'OMALLEY', 'RUBIO'];
+      var candidateZScores = {};
+      candidateZScores.SANDERS = SANDERS_Z;
+      candidateZScores.CLINTON = CLINTON_Z;
+      candidateZScores.TRUMP = TRUMP_Z;
+      candidateZScores.CRUZ = CRUZ_Z;
+      candidateZScores.KASICH = KASICH_Z;
+      candidateZScores.BUSH = BUSH_Z;
+      candidateZScores.CARSON = CARSON_Z;
+      candidateZScores.OMALLEY = OMALLEY_Z;
+      candidateZScores.RUBIO = RUBIO_Z;
+
+      CARSON_CLOUD.sort(function(a,b) {
+        return b.values - a.values;
+      });
+      CLINTON_CLOUD.sort(function(a,b) {
+        return b.values - a.values;
+      });
+      CRUZ_CLOUD.sort(function(a,b) {
+        return b.values - a.values;
+      });
+      RUBIO_CLOUD.sort(function(a,b) {
+        return b.values - a.values;
+      });
+      TRUMP_CLOUD.sort(function(a,b) {
+        return b.values - a.values;
+      });
+      SANDERS_CLOUD.sort(function(a,b) {
+        return b.values - a.values;
+      });
+      KASICH_CLOUD.sort(function(a,b) {
+        return b.values - a.values;
+      });
+      BUSH_CLOUD.sort(function(a,b) {
+        return b.values - a.values;
+      });
+      OMALLEY_CLOUD.sort(function(a,b) {
+        return b.values - a.values;
+      });
+
+      carson_tags = [];
+      clinton_tags = [];
+      cruz_tags = [];
+      rubio_tags = [];
+      trump_tags = [];
+      sanders_tags = [];
+      kasich_tags = [];
+      bush_tags = [];
+      omalley_tags = [];
+
+      CARSON_CLOUD.forEach(function(d) {
+        carson_tags.push([d.key,parseInt(d.values)]);
+      });
+      carson_tags = carson_tags.slice(0,50);
+
+      CLINTON_CLOUD.forEach(function(d) {
+        clinton_tags.push([d.key,parseInt(d.values)]);
+      });
+      clinton_tags = clinton_tags.slice(0,50);
+
+      CRUZ_CLOUD.forEach(function(d) {
+        cruz_tags.push([d.key,parseInt(d.values)]);
+      });
+      cruz_tags = cruz_tags.slice(0,50);
+
+      RUBIO_CLOUD.forEach(function(d) {
+        rubio_tags.push([d.key,parseInt(d.values)]);
+      });
+      rubio_tags = rubio_tags.slice(0,50);
+
+      TRUMP_CLOUD.forEach(function(d) {
+        trump_tags.push([d.key,parseInt(d.values)]);
+      });
+      trump_tags = trump_tags.slice(0,50);
+
+      SANDERS_CLOUD.forEach(function(d) {
+        sanders_tags.push([d.key,parseInt(d.values)]);
+      });
+      sanders_tags = sanders_tags.slice(0,50);
+
+      KASICH_CLOUD.forEach(function(d) {
+        kasich_tags.push([d.key,parseInt(d.values)]);
+      });
+      kasich_tags = kasich_tags.slice(0,50);
+
+      BUSH_CLOUD.forEach(function(d) {
+        bush_tags.push([d.key,parseInt(d.values)]);
+      });
+      bush_tags = bush_tags.slice(0,50);
+
+      CARSON_CLOUD.forEach(function(d) {
+        omalley_tags.push([d.key,parseInt(d.values)]);
+      });
+      omalley_tags = omalley_tags.slice(0,50);
+
+
+      function toggle(id) {
+          var element = document.getElementById(id);
+
+          if (element) {
+              var display = element.style.display;
+
+              if (display == "none") {
+                  element.style.display = "block";
+              } else {
+                  element.style.display = "none";
+              }
+          }
+      }
+      
+    function clearThis() {
+        excerpt.value = "";
+    }
+    </script>
+
+  </head>
+
+
+  <body >
+    <!-- Header Bar -->
+    <header>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+              Lingua Blanca
+            </a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div><!-- container -->
+      </nav>
+    </header>
+
+    <!-- Introduction, Table, Columns, Quotations-->
+
+    <div class="container">
+      <!-- Introduction-->
+      <div class="row" id="vision">
+        <section class="page col-sm-12">
+          <h2 align="center">Enter an excerpt from the debates and we'll identify the speaker!</h2>      
+      </div>
+
+      <br>
+      <br>
+
+      <div class="input-group">
+          <input type="text" class="form-control input-lg" id="excerpt">
+          <span class="input-group-btn">
+            <button class="btn btn-default input-lg" type="button" onclick="run(document.getElementById('excerpt'))">Go!</button>
+            <button class="btn btn-default input-lg" type="button" onclick="clearThis()">Clear Text</button>
+          </span>
+      </div>
+
+      <br>
+      <div class="row" style="display:none" id="resultsTable">
+        <section id="test" class="col-sm-6">
+          <div class="panel panel-default"> <!-- primary, success, info, warning, danger -->
+            <div class="panel-heading">
+              <h3 class="panel-title">The likely speakers in decreasing order of Z-score is-</h3>
+            </div>
+            <div class="table-responsive">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td id="first_name"></td>
+                    <td id="first_score"></td>
+                  </tr>
+                  <tr>
+                    <td id="second_name"></td>
+                    <td id="second_score"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="panel-body">
+              <p><a onmouseover="nhpup.popup('Lorem ipsum dolor sit ...');" href='somewhere.html'>How is this computed?</a>
+              <!--  Scott: add some code like this to create a mouseover <a onmouseover="nhpup.popup('Lorem ipsum dolor sit ...');" href='somewhere.html'>some text</a>-->
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <br>
+
+      <!-- Quotations-->
+      <div class="row">
+        <section id="excerpts" class="page col-sm-12">
+          <h2>Example Excerpts</h2>
+          <div class="row">
+            <section class="col-sm-6">
+              <blockquote>
+                <p>
+                  When Mexico sends its people, they’re not sending the best. They’re not sending you, they’re sending people that have lots of problems and they’re bringing those problems with us. They’re bringing drugs. They’re bring crime. They’re rapists… And some, I assume, are good people.
+                </p>
+                <footer>
+                  Donald Trump
+                </footer>
+              </blockquote>
+            </section>
+            <section class="col-sm-6">
+              <blockquote>
+                <p>
+                  I support what President Obama is doing. He called for and got accountability from the officials at the EPA to make sure the state is doing its job. He expanded Medicaid for helping kids particularly to get the health care they need. He is also ordered that there be a Head Start program. I support that.
+                </p>
+                <footer>
+                  Hillary Clinton
+                </footer>
+              </blockquote>
+            </section>
+          </div>
+
+          <div class="row">
+            <section class="col-sm-6">
+              <blockquote>
+                <p>
+                  Establishing a 0.03 percent Wall Street speculation fee, similar to what we had from 1914-1966, would dampen the dangerous level of speculation and gambling on Wall Street, encourage the financial sector to invest in the productive economy and reduce the deficit by more than $350 billion over 10 years.
+                </p>
+                <footer>
+                  Bernie Sanders
+                </footer>
+              </blockquote>
+            </section>
+            <section class="col-sm-6">
+              <blockquote>
+                <p>
+                  The Obama administration came into Utah and said, 'We're not going to listen to what the U.S. Supreme Court said. 'We, the federal government, are going to recognize marriages in the state of Utah and Utah state law explicitly does not recognize as marriage,' and that was really, in my view, an abuse of power.
+                </p>
+                <footer>
+                  Ted Cruz
+                </footer>
+              </blockquote>
+            </section>
+          </div>
+          <!-- 2nd Row end-->
+
+        </section>
+        <!-- Section for Quotations end-->
+      </div>
+      <!-- Quotation ends--> 
+    
+
+
+    <!-- List group item -->
+      <!-- <div class="content container"> -->
+        <div class="row">
+          <section class="col-sm-12">
+
+            <h2>Candidate Trivia</h2>
+            <div class="list-group">
+              <p class="list-group-item"> Democrats<span class="badge">Delegate Count</span></p>
+              <a class="list-group-item active" onclick="toggle('sanders-trivia')" style="border-bottom-color: white">Bernie Sanders<span class="badge">1191</span></a>
+              <p class="list-group-item" id="sanders-trivia" style="display: none;">
+              Marco Antonio Rubio is an American politician and attorney, and the junior United States Senator from Florida. Rubio previously served as Speaker of the Florida House of Representatives.
+              </p>
+              <a class="list-group-item active" onclick="toggle('clinton-trivia')" style="border-bottom-color: white; border-top-color: white">Hillary Clinton<span class="badge">1930</span></a>
+              <p class="list-group-item" id="clinton-trivia" style="display: none;">
+              Marco Antonio Rubio is an American politician and attorney, and the junior United States Senator from Florida. Rubio previously served as Speaker of the Florida House of Representatives.
+              </p>
+              <a class="list-group-item active" onclick="toggle('omalley-trivia')" style="border-bottom-color: white; border-top-color: white">Martin O'Malley<span class="badge">Dropped Out</span></a>
+              <p class="list-group-item" id="omalley-trivia" style="display: none;">
+              Marco Antonio Rubio is an American politician and attorney, and the junior United States Senator from Florida. Rubio previously served as Speaker of the Florida House of Representatives.
+              </p>
+              <p class="list-group-item"></p>
+              <p class="list-group-item"> Republicans</p>
+              <a class="list-group-item list-group-item-danger" onclick="toggle('carson-trivia')" style="border-bottom-color: maroon; border-top-color: maroon">Ben Carson <span class="badge">Dropped Out</span></a>
+              <p class="list-group-item" id="carson-trivia" style="display: none;">
+              Marco Antonio Rubio is an American politician and attorney, and the junior United States Senator from Florida. Rubio previously served as Speaker of the Florida House of Representatives.
+              </p>
+              <a class="list-group-item list-group-item-danger" onclick="toggle('trump-trivia')" style="border-bottom-color: maroon; border-top-color: maroon">Donald Trump<span class="badge">845</span></a>
+              <p class="list-group-item" id="trump-trivia" style="display: none;">
+              Marco Antonio Rubio is an American politician and attorney, and the junior United States Senator from Florida. Rubio previously served as Speaker of the Florida House of Representatives.
+              </p>
+              <a class="list-group-item list-group-item-danger" onclick="toggle('bush-trivia')" style="border-bottom-color: maroon; border-top-color: maroon">Jeb Bush <span class="badge">Dropped Out</span></a>
+              <p class="list-group-item" id="bush-trivia" style="display: none;">
+              Marco Antonio Rubio is an American politician and attorney, and the junior United States Senator from Florida. Rubio previously served as Speaker of the Florida House of Representatives.
+              </p>
+              <a class="list-group-item list-group-item-danger" onclick="toggle('kasich-trivia')" style="border-bottom-color: maroon; border-top-color: maroon">John Kasich<span class="badge">148</span></a>
+              <p class="list-group-item" id="kasich-trivia" style="display: none;">
+              Marco Antonio Rubio is an American politician and attorney, and the junior United States Senator from Florida. Rubio previously served as Speaker of the Florida House of Representatives.
+              </p>
+              <a class="list-group-item list-group-item-danger" onclick="toggle('rubio-trivia')" style="border-bottom-color: maroon; border-top-color: maroon">Marco Rubio<span class="badge">Dropped Out</span>
+              </a>
+              <p class="list-group-item" id="rubio-trivia" style="display: none;">
+              Marco Antonio Rubio is an American politician and attorney, and the junior United States Senator from Florida. Rubio previously served as Speaker of the Florida House of Representatives.
+              </p>
+              <a class="list-group-item list-group-item-danger" onclick="toggle('cruz-trivia')" style="border-bottom-color: maroon; border-top-color: maroon">Ted Cruz<span class="badge">Dropped Out</span></a>
+              <p class="list-group-item" id="cruz-trivia" style="display: none;">
+              Marco Antonio Rubio is an American politician and attorney, and the junior United States Senator from Florida. Rubio previously served as Speaker of the Florida House of Representatives.
+              </p>
+            </div>
+
+          </section>
+        </div><!-- row -->   
+      <!-- </div>content container -->
+      <!-- End of list group item -->
+      </div><!-- content container -->
+
+    <!-- Table with illustrations -->
+    <div class="content container">
+      <div class="row">
+        <section class="col-sm-12">
+          <h2>What (and how much) Candidates are saying</h2>
+          <br>      
+        </section>
+      </div>
+
+      <div class="row"><!--Table elements- no rows or columns specified-->
+
+        <div class="col-xs-6 col-sm-4">
+          <div id="carson-cloud" style="width:100%;height:225px;position:relative;"></div>
+          <h3 align="center">Ben Carson</h3>
+        </div>
+
+        <div class="col-xs-6 col-sm-4">
+          <div id="sanders-cloud" style="width:100%;height:225px;position:relative;"></div>
+          <h3 align="center">Bernie Sanders</h3>
+        </div>
+
+        <div class="col-xs-6 col-sm-4">
+          <div id="trump-cloud" style="width:100%;height:225px;position:relative;"></div>
+          <h3 align="center">Donald Trump</h3>
+        </div>
+
+        <div class="col-xs-6 col-sm-4">
+          <div id="clinton-cloud" style="width:100%;height:225px;position:relative;"></div>
+          <h3 align="center">Hillary Clinton</h3>
+        </div>
+
+        <div class="col-xs-6 col-sm-4">
+          <div id="bush-cloud" style="width:100%;height:225px;position:relative;"></div>
+          <h3 align="center">Jeb Bush</h3>
+        </div>
+
+        <div class="col-xs-6 col-sm-4">
+          <div id="kasich-cloud" style="width:100%;height:225px;position:relative;"></div>
+          <h3 align="center">John Kasich</h3>
+        </div>
+
+        <div class="col-xs-6 col-sm-4">
+          <div id="rubio-cloud" style="width:100%;height:225px;position:relative;"></div>
+          <h3 align="center">Marco Rubio</h3>
+        </div>
+
+        <div class="col-xs-6 col-sm-4">
+          <div id="omalley-cloud" style="width:100%;height:225px;position:relative;"></div>
+          <h3 align="center">Martin O'Malley</h3>
+        </div>
+
+        <div class="col-xs-6 col-sm-4">
+          <div id="cruz-cloud" style="width:100%;height:225px;position:relative;"></div>
+          <h3 align="center">Ted Cruz</h3>
+        </div>
+
+      </div><!-- Table elements -->
+
+      <script>
+        WordCloud(document.getElementById('carson-cloud'), {gridSize: 12, weightFactor: 2, rotateRatio: 0.5,
+         list : carson_tags.map(function(word) { return [word[0], Math.round(word[1]/5)]; }), wait: 10});
+
+        WordCloud(document.getElementById('sanders-cloud'), {gridSize: 12, weightFactor: 2, rotateRatio: 0.5,
+         list : sanders_tags.map(function(word) { return [word[0], Math.round(word[1]/5)]; }), wait: 10});
+
+        WordCloud(document.getElementById('trump-cloud'), {gridSize: 12, weightFactor: 2, rotateRatio: 0.5,
+         list : trump_tags.map(function(word) { return [word[0], Math.round(word[1]/5)]; }), wait: 10});
+
+        WordCloud(document.getElementById('clinton-cloud'), {gridSize: 12, weightFactor: 2, rotateRatio: 0.5,
+         list : clinton_tags.map(function(word) { return [word[0], Math.round(word[1]/5)]; }), wait: 10});
+
+        WordCloud(document.getElementById('bush-cloud'), {gridSize: 12, weightFactor: 2, rotateRatio: 0.5,
+         list : bush_tags.map(function(word) { return [word[0], Math.round(word[1]/5)]; }), wait: 10});
+
+        WordCloud(document.getElementById('kasich-cloud'), {gridSize: 12, weightFactor: 2, rotateRatio: 0.5,
+         list : kasich_tags.map(function(word) { return [word[0], Math.round(word[1]/5)]; }), wait: 10});
+
+        WordCloud(document.getElementById('rubio-cloud'), {gridSize: 12, weightFactor: 2, rotateRatio: 0.5,
+         list : rubio_tags.map(function(word) { return [word[0], Math.round(word[1]/5)]; }), wait: 10});
+
+        WordCloud(document.getElementById('omalley-cloud'), {gridSize: 12, weightFactor: 2, rotateRatio: 0.5,
+         list : omalley_tags.map(function(word) { return [word[0], Math.round(word[1]/5)]; }), wait: 10});
+
+        WordCloud(document.getElementById('cruz-cloud'), {gridSize: 12, weightFactor: 2, rotateRatio: 0.5,
+         list : cruz_tags.map(function(word) { return [word[0], Math.round(word[1]/5)]; }), wait: 10});
+        
+      </script>
+
+
+      <br>
+      <br>
+
+
+      <div class="row">
+        <section id="about" class="col-sm-12">
+          <div class="panel panel-default"> <!-- primary, success, info, warning, danger -->
+            <div class="panel-heading">
+              <h3 class="panel-title">About</h3>
+            </div>
+            <div class="panel-body">
+              <p>Hi, we are a team of 2 graduate students, Siddharth Gupta and Scott Middleton, at MIT. We are interested in exploring how different techniques, ranging from simple frequency measures to convoluted neural networks, can be used to identify speakers using excerpts from the GOP debates.</p>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>Email</td>
+                    <td>sid1@mit.edu, smiddle@mit.edu</td>
+                  </tr>
+                  <tr>
+                    <td>Address</td>
+                    <td>77 Massachusetts Avenue, Room 1-290</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+
+    </div><!-- content container -->
+
+
+    
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
