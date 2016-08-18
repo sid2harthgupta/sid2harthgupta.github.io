@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>Siddharth Gupta</title>
   </head>
-
 
   <body >
     <!-- Header Bar -->
@@ -17,11 +17,10 @@
         <div class="container">
           <div class="navbar-header">
             <a class="navbar-brand" href="#">
-              Sid's <span class="subhead">Corner</span>
+              About <span class="subhead">Me</span>
             </a>
           </div>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#vision">Vision</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#prototypes">Prototypes</a></li>
             <li><a href="#about">About</a></li>
@@ -35,22 +34,55 @@
 
     <div class="container">
       <!-- Introduction-->
-      <div class="row" id="vision">
-        <section class="page col-sm-12">
-          <h2>Data Driven Cities</h2>      
 
-          <p>In 1950, 750 million people lived in cities. In the middle of 2009, for the first time, more people (3.42B) lived inside cities than outside. In 2014, this fraction increased to 54% of the 7.3B (3.94B). This is anticipated to increase to 66% of 9.7B (6.4B) by 2050. This explosion in population has stretched cities to the edge of their capacity and lead to unprecedented stress on urban resources. Under such conditions, it is critical that resources available to cities be utilized optimally and towards the best set of &nbsp;undertakings.</p>
+      <div class="row">
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <img src="./images/Profile_Pic.jpg" alt="...">
+            <div class="caption">
+              <h3>Siddharth Gupta</h3>
+              <p>Transportation Engineer</p>
+              <p><span class="glyphicon glyphicon-education"></span> MS, Massachusetts Institute of Technology, 2017
+              <br><span class="glyphicon glyphicon-education"></span> B.Tech, M.Tech, Indian Institute of Technology Madras, 2015</p>
+              <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-envelope"></span> sid1@mit.edu</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-9">
+          <div class="panel panel-default">
+            <div class="panel-body">Hi, I am presently pursuing my Masters degree at MIT. I expect to graduate in Jan 2017 and am actively looking for job opportunities.<br>
+            I have a rigourous background in working with data and algorithms to analyze transportation networks. Metropolitan scale transportation networks provide humongous and noisy data streams that either need to be processed in realtime for information provision or archived and analyzed later for modeling and policy analysis. Together with some amazing people, I have tackled each of these aspects with a variety of data sources and organizations in different network settings-<br>
+            <ul>
+              <li>TimeGeo: A PNAS published patent-pending fine-scale urban mobility model. It generates individual mobility traces by tying together the inference of home and work activity locations from data, with the modeling of flexible activities in space and time. The model was built using cell phone data from over 2 Million residents of Boston.</li>
+              <li>Building Occupancy: Actionable insights are the foundation for meaningful change. Keeping this in mind, one of the objectives of my thesis is to create algorithms to distribute people in individual buildings and points of interest. One of the long term goal is to relate these to patterns of energy consumption and to weed out inefficiencies.</li>
+              <li>A Real-time Traffic Information System <a href="http://rtis.iitm.ac.in/">(RTIS)</a> to provide dynamic traffic information on a 16km long Intelligent Transportation System study corridor in Chennai. First of its kind to do so for heterogeneous traffic lacking lane discipline</li>
+              <li>Smart Cards: Analysis of real-time and pseudo real time smart card data from the transit network of Brisbane, Gold Coast and Sunshine Coast for optimizing service performance and modeling traveler behavior. Also measured elasticities of passengers to service reliability using observed route choice.</li>
+              <li>Electronic Ticketing Machines: Analysis of travel patterns and revenue management system in Chennai to redefine fare slabs to promote long-distance travel.</li>
+              <li>Accident Prevention System: Built a prototype vehicle-mountable Accident Prevention System with a pulse monitor, speedometer, obstruction detection module and automatic steering in case of potential accidents</li>
+              <li>Urban Autonomous Delivery: Built a coffee delivery robot that was able to deliver more than 50 coffees to customers within 2 hours.</li>
+            </ul>
+            The details of some of these projects are provided below.
+            I enjoy delivering high fidelity results and research in a fast paced environment with a motivated team.<br>
+            Outside of research, I can be found working out (playing squash, swimming, hitting the gym or on long jogs) or playing with my Arduino/RaspberryPi.<br>
+            </div>
+          </div>
+        </div>
+      </div>
 
-          <p>Increasing population gives rise to two phenomena- higher density and sprawl. High density leads to crowding and levies excess demand on existing infrastructure. Sprawl leads to poorly planned neighborhoods which in turn cause reliance on automobiles and cause long commutes. For several years, the solution to these problems was assumed to lie in expanding infrastructure facilities. But in this scenario, building broader roads is analogous to buying a larger belt to cure obesity. Stress is bound to reappear the moment the additional wiggle room gets &nbsp;exhausted.</p>
-
-          <p>The urban form today is covered with a variety of sensor. Hand held devices, traffic cameras, inductive loops, fare collection systems and several other sensors are continuously recording some form of urban mobility or the other. Cities require a software update for transportation services that enable people to utilize resources better. This should not be a penalty based system such as that followed by surge pricing in Uber or freeway tolls but rather an information based planning tool that enables people to plan entire journeys based on system optimality, possibly driven by incentives for behavior changes. The way to do this has to be a data driven system, at the heart of which lie robust models for urban mobility which are not just able to explain past behaviors but also predict likely future &nbsp;movements.</p>
-
-          <p>There are 3 key ubiquitous systems for collecting data pertaining to people’s movement in cities. And these occupy nearly disjoint universes. The first is through on-board GPS units. Data from these units are often available on taxi cabs and sometimes even on private vehicles through mobile apps such as that used for the famous Mobile Millennium project. These provide quality information about existing traffic flows and can do so with a relatively small penetration rate in the traffic stream. The second mode involves smart cards. These provide information about fare transactions on transit services, usually both rails and buses. These are often characterized by high penetration rates and provide a nearly complete universe of the movements occurring in the transit system. The ODX (Origin-Destination-Transfer) model developed at MIT’s Transit lab leverages these data to estimate nearly all transactions on the transit network of London. These two modes are able to provide fairly detailed insights into the real time performance of road networks and the public transit system, people’s behavior outside these systems still remains untapped. Call records from cell phones are able to fill in this gap. For several years, these records were being discarded as waste by telecom service providers. Recent studies, however, have been able to leverage these data to produce synthetic trajectories that can estimate each individual’s location within 10-minute time slots in a day. Some of the pioneering work in this type of modeling has been done at the Human Mobility and Networks Lab at &nbsp;MIT.</p>
-
-          <p>These 3 sources can in tandem identify the most and least favorable itinerary of a traveler’s daily mobility motif for the system. They can also be used to obtain behavioral insights and determine price and cross elasticities to effectuate the required changes in people’s &nbsp;behaviors.</p>
-
-          <p>Such a data-driven incentive-based model is what I think will lead to the rise of Transportation as a service (TAAS). It has immense potential to improve the management of urban resources and sustain the ever increasing demands being imposed on the &nbsp;infrastructure.</p>
-        </section>
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <h1>Boston research in action</h1>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <a class="thumbnail">
+            <iframe id="timeGeo" width="100%" height="315" src="https://www.youtube.com/embed/qZt7HFWy6vU?autoplay=1&playlist=qZt7HFWy6vU&loop=1&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+          </a>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <a class="thumbnail">
+            <iframe id="occupancy" width="100%" height="315" src="https://www.youtube.com/embed/vEDQNcwaeS0?playlist=vEDQNcwaeS0&loop=1&autoplay=1&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+          </a>
+        </div>
       </div>
 
       <!-- Columns-->
@@ -124,7 +156,7 @@
         <div class="col-xs-6 col-sm-4">
           <a href="http://timesofindia.indiatimes.com/home/At-Shaastra-2010IIT-Madrass-annual-tech-fest-an-array-of-new-technologies-will-be-shown-chief-among-them-being-an-accident-prevention-system-aimed-at-reducing-frequency-of-accidents-in-india-It-warns-drivers-during-high-risk-conditions-/articleshow/6644277.cms" target="_blank"><img class="img-responsive" src="images/APS.jpg" alt="Accident prevention system"></a>
           <h3>Accident Prevention System</h3>
-          <p>As part of the annual technical festival at IIT-Madras, my team and I built the prototype of a vahicle-mountable Accident Prevention System with a pulse monitor, speedometer, obstruction detection module and automatic steering in case of potential accidents. We were featured in national newspapers such as <a href="http://timesofindia.indiatimes.com/home/At-Shaastra-2010IIT-Madrass-annual-tech-fest-an-array-of-new-technologies-will-be-shown-chief-among-them-being-an-accident-prevention-system-aimed-at-reducing-frequency-of-accidents-in-india-It-warns-drivers-during-high-risk-conditions-/articleshow/6644277.cms">here</a></p>
+          <p>As part of the annual technical festival at IIT-Madras, my team and I built the prototype of a vehicle-mountable Accident Prevention System with a pulse monitor, speedometer, obstruction detection module and automatic steering in case of potential accidents. We were featured in national newspapers such as <a href="http://timesofindia.indiatimes.com/home/At-Shaastra-2010IIT-Madrass-annual-tech-fest-an-array-of-new-technologies-will-be-shown-chief-among-them-being-an-accident-prevention-system-aimed-at-reducing-frequency-of-accidents-in-india-It-warns-drivers-during-high-risk-conditions-/articleshow/6644277.cms">here</a></p>
         </div>
 
         <!-- Video -->
@@ -142,36 +174,7 @@
           <p>As part of the class on City Science at the MIT Media Lab focusing on autonomous delivery systems in urban environments, we built a coffee delivery robot that was able to deliver more than 50 coffees to customers within 2 hours.</p>
         </div>
 
-      </div><!-- Table elements -->
-
-      <div class="row">
-        <section id="about" class="col-sm-12">
-          <div class="panel panel-default"> <!-- primary, success, info, warning, danger -->
-            <div class="panel-heading">
-              <h3 class="panel-title">Siddharth Gupta (Sid)</h3>
-            </div>
-            <div class="panel-body">
-              <p>Hi, I am a graduate student at the Human Mobility and Networks Lab at MIT. My research focuses on leveraging a variety of sensors distributed in modern cities to model how people move, their interaction with infrastructure and the performance of the infrastructure systems. Understanding people, infrastructure and their interaction is key to making cities really smart. I think that there is no denying the fact that data driven solutions are what will make cities more liveable and envision a future in which these models are sophisticated enough to provide continuous value to the citizens. I believe that there is sufficient value to be provided to the system and all individuals without intrusion of privacy, which is an inalienable right of people irrespective of the presence of explicit provisions and legislations to safeguard it. Down the line, I see myself as leading efforts to push the frontiers of the digital revolution of cities. I am a Civil Engineer by training with specialization in Infrastructure Planning and Management and Transportation Systems. I pursued my undergrad education and first masters degree at IIT-Madras and am presently working on my second masters degree at MIT.</p>
-            </div>
-
-            <div class="table-responsive">
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <td>Email</td>
-                    <td>sid1@mit.edu</td>
-                  </tr>
-                  <tr>
-                    <td>Address</td>
-                    <td>77 Massachusetts Avenue, Room 1-290</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-        </section>
-      </div><!-- row -->   
+      </div><!-- Table elements -->  
     </div><!-- content container -->
     <!-- End of panel-->
 
