@@ -11,6 +11,22 @@
 
 
   <body >
+    <script>
+      var x = document.getElementById("demo");
+
+      function getLocation() {
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition);
+          } else { 
+              x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+
+      function showPosition(position) {
+          x.innerHTML = "Latitude: " + position.coords.latitude + 
+          "<br>Longitude: " + position.coords.longitude;
+        }
+</script>
     <!-- Header Bar -->
     <header>
       <nav class="navbar navbar-default" role="navigation">
@@ -40,6 +56,9 @@
           <h2>Data Driven Cities</h2>      
 
           <p>In 1950, 750 million people lived in cities. In the middle of 2009, for the first time, more people (3.42B) lived inside cities than outside. In 2014, this fraction increased to 54% of the 7.3B (3.94B). This is anticipated to increase to 66% of 9.7B (6.4B) by 2050. This explosion in population has stretched cities to the edge of their capacity and lead to unprecedented stress on urban resources. Under such conditions, it is critical that resources available to cities be utilized optimally and towards the best set of &nbsp;undertakings.</p>
+          <p>
+            <button onclick="getLocation()">Try It</button>
+          </p>
 
           <p>Increasing population gives rise to two phenomena- higher density and sprawl. High density leads to crowding and levies excess demand on existing infrastructure. Sprawl leads to poorly planned neighborhoods which in turn cause reliance on automobiles and cause long commutes. For several years, the solution to these problems was assumed to lie in expanding infrastructure facilities. But in this scenario, building broader roads is analogous to buying a larger belt to cure obesity. Stress is bound to reappear the moment the additional wiggle room gets &nbsp;exhausted.</p>
 
